@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_account_invoice_customer_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <group col="4" colspan="4">
+                    <field  name="rate_pricelist"
+                            string="RATE USD/PCL"
+                            attrs="{'invisible': ['|', ('pricelist_id', '=', False), ('state', 'not in', ['draft'])]}"
+                            help="Update price in lines from the field RATE"
+                    />
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_supplier_form" model="ir.ui.view">
+	      <field name="model">account.invoice</field>
+      	<field name="inherit_id" ref="account.invoice_supplier_form"/>
+      	<field name="arch" type="xml">
+	          <field name="user_id" position="after">
+                <group col="4" colspan="4">
+                    <field  name="rate_pricelist"
+                            string="RATE USD/PCL"
+                            attrs="{'invisible': ['|', ('pricelist_id', '=', False), ('state', 'not in', ['draft'])]}"
+                            help="Update price in lines from the field RATE"
+                    />
+                </group>
+      	    </field>
+   	    </field>
+    </record>
+
+
+</odoo>
