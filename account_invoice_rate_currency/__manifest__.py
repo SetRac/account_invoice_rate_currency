@@ -13,10 +13,11 @@
     'website': 'http://consulnet.cl',
     'license': 'AGPL-3',
     'depends': [
-        'account',
+        'account','sale',
     ],
     'data': [
         'views/account_invoice_view.xml',
+        'views/sale_order_view.xml',
     ],
     'demo': [
         'demo/res_groups.yml',
