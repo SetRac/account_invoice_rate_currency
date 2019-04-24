@@ -43,6 +43,9 @@ class AccountInvoiceLine(models.Model):
                     currency_sale= order_sale.pricelist_id.currency_id.name
                 else:
                     currency_sale = False
+
+            else:
+                currency_sale = False
             rate = self.invoice_id.rate_pricelist
             if (  currency_sale == "USD" ) and  ( self.invoice_id.rate_pricelist != False )  :
                 rate = rate.replace(",", ".")
